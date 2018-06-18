@@ -7,7 +7,7 @@ class Triangle
   end
 
   def kind
-    if any
+    invalid_triangle = @length_1 <= 0 || @length_2 <= 0 || @length_3 <= 0
   end
 
   class TriangleError < StandardError
