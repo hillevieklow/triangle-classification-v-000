@@ -9,7 +9,11 @@ class Triangle
   end
 
   def kind
-    invalid_triangle = @length_1 <= 0 || @length_2 <= 0 || @length_3 <= 0
+    invalid_triangle = @length_1 <= 0 || @length_2 <= 0 || @length_3 <= 0 || \
+      @length_1 + @length_2 <= @length_3 || @length_2 + @length_3 <= @length_1 || \
+      @length_1 + @length_3 <= @length_2
+
+
   end
 
   class TriangleError < StandardError
