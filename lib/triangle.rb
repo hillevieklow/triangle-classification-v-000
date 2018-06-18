@@ -13,7 +13,16 @@ class Triangle
       @length_1 + @length_2 <= @length_3 || @length_2 + @length_3 <= @length_1 || \
       @length_1 + @length_3 <= @length_2
 
-
+    if invalid_triangle
+      raise TriangleError
+    elsif @length_1 == @length_2 && @length_2 == @length_3
+      :equilateral
+    elsif @length_1 == @length_2 || @length_2 == @length_3 || @length_3 == @length_1
+      :isosceles
+    else
+      :scalene
+    end
+    
   end
 
   class TriangleError < StandardError
